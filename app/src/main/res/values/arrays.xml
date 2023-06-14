@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="kolektory" >
+        <item>KPS1</item>
+        <item>KPS1 Concept</item>
+        <item>KPS11</item>
+        <item>KPG1</item>
+        <item>KPG1H</item>
+        <item>KPI</item>
+        <item>KTU 10</item>
+        <item>KTU 15</item>
+        <item>KTU 6R2</item>
+        <item>KTU 9R2</item>
+    </array>
+    <array name="kolektory_merny_objem" >
+        <item>"1.4"</item>
+        <item>"1.4"</item>
+        <item>"1.7"</item>
+        <item>"1.7"</item>
+        <item>"1.7"</item>
+        <item>"1.7"</item>
+        <item>"1.7"</item>
+        <item>"2.4"</item>
+        <item>"0.92"</item>
+        <item>"1.37"</item>
+    </array>
+
+    <array name="trubky" >
+        <item>Cu15</item>
+        <item>Cu18</item>
+        <item>Cu22</item>
+        <item>Cu28</item>
+        <item>Cu35</item>
+        <item>DN12</item>
+        <item>DN16</item>
+        <item>DN20</item>
+        <item>DN25</item>
+    </array>
+    <array name="trubky_merny_objem" >
+        <item>"0.133"</item>
+        <item>"0.201"</item>
+        <item>"0.314"</item>
+        <item>"0.491"</item>
+        <item>"0.804"</item>
+        <item>"0.17"</item>
+        <item>"0.24"</item>
+        <item>"0.38"</item>
+        <item>"0.68"</item>
+    </array>
+</resources>

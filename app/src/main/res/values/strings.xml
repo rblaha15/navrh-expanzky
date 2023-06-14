@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Návrh expanzní nádoby</string>
+    <string name="en_top">Expanzní nádrž pro vytápění%s</string>
+    <string name="en_tv">Expanzní nádrž pro teplou vodu%s</string>
+    <string name="en_sol">Expanzní nádrž pro solární systémy%s</string>
+    <string name="objem_zasobniku">Objem zásobníku tv:</string>
+    <string name="litr">l</string>
+    <string name="objem">objem</string>
+    <string name="doporucena_en">Doporučená expanzní nádrž:</string>
+    <string name="kod">Obj. kód:</string>
+    <string name="zkratka">Zkratka:</string>
+    <string name="nazev">Název:</string>
+    <string name="top_objem">Vodní objem celé otopné soustavy:</string>
+    <string name="top_max_teplota">Maximální teplota OS:</string>
+    <string name="stupen_celsia">°C</string>
+    <string name="top_max_tlak">Maximální provozní tlak v OS: (?)</string>
+    <string name="bar">bar</string>
+    <string name="top_prevyseni">Převýšení nejvyššího bodu OS nad EN: (?)</string>
+    <string name="m">m</string>
+    <string name="top_min_tlak_kotel">Minimální požadovaný tlak v kotli: (?)</string>
+    <string name="typ_kolektoru">Typ kolektoru:</string>
+    <string name="pocet_kolektoru">Počet kolektorů:</string>
+    <string name="typ_potrubi">Typ ostatního potrubí:</string>
+    <string name="delka_potrubi">Délka potrubí:</string>
+    <string name="typ_potrubi_strecha">Typ potrubí na střeše: (?)</string>
+    <string name="objem_kapaliny_vymenik">Objem kapaliny ve výměníku: (?)</string>
+    <string name="vyskovy_rozdil">Výškový rozdíl mezi EN a nejvyšším bodem OS: (?)</string>
+    <string name="stresni_potrubi_vysl">Střešní potrubí je potrubí, které se nachází v úrovní solárních panelů nebo max. 0,5m pod nimi</string>
+    <string name="vysvetleni">Vysvětlení:</string>
+    <string name="dopo_hodn">Doporučené hodnoty:</string>
+    <string name="neni_v_nabidce">Není v nabídce</string>
+    <string name="urceno_vyrobcem_kotle">Určeno výrobcem kotle</string>
+    <string name="hodnota_poj_v">Hodnota pojistného ventilu v kotelně</string>
+</resources>

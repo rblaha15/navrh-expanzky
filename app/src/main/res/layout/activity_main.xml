@@ -1,0 +1,1044 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tvTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:text="@string/en_tv"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@id/barTv"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.Barrier
+                        android:id="@+id/barTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:barrierDirection="top"
+                        app:constraint_referenced_ids="vTv, clTvMore"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:layout_editor_absoluteY="35dp" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clTvMore"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toTopOf="@id/vTv"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/tvTvObjem"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/objem_zasobniku"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/etTvObjem"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/etTvObjem" />
+
+                        <EditText
+                            android:id="@+id/etTvObjem"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:importantForAutofill="no"
+                            android:inputType="numberDecimal"
+                            app:layout_constraintEnd_toStartOf="@+id/tvTvObjemJednotky"
+                            app:layout_constraintStart_toEndOf="@+id/tvTvObjem"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="LabelFor" />
+
+                        <TextView
+                            android:id="@+id/tvTvObjemJednotky"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:text="@string/litr"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/etTvObjem"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/etTvObjem" />
+
+                        <TextView
+                            android:id="@+id/tvTvDoporucenaNadrz"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/doporucena_en"
+                            android:textColor="@color/ruzova"
+                            android:textSize="20sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/etTvObjem" />
+
+                        <TextView
+                            android:id="@+id/tvTvKodText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/kod"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/tvTvKod"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tvTvKod" />
+
+                        <TextView
+                            android:id="@+id/tvTvKod"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:text="00000"
+                            android:textSize="18sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/tvTvKodText"
+                            app:layout_constraintTop_toBottomOf="@+id/tvTvDoporucenaNadrz" />
+
+                        <TextView
+                            android:id="@+id/tvTvZkratkaText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/zkratka"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/tvTvZkratka"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tvTvZkratka" />
+
+                        <TextView
+                            android:id="@+id/tvTvZkratka"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:text="EXP QWERTZUIOP"
+                            android:textSize="18sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/tvTvKodText"
+                            app:layout_constraintTop_toBottomOf="@+id/tvTvKod" />
+
+                        <TextView
+                            android:id="@+id/tvTvNazevText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/nazev"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/tvTvNazev"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tvTvNazev" />
+
+                        <TextView
+                            android:id="@+id/tvTvNazev"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:text="Expanzní nádoba abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz"
+                            android:textSize="18sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/tvTvKodText"
+                            app:layout_constraintTop_toBottomOf="@+id/tvTvZkratka" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/vTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvSol"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cvTv">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clSol"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tvSol"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:text="@string/en_sol"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@id/barSol"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.Barrier
+                        android:id="@+id/barSol"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:barrierDirection="top"
+                        app:constraint_referenced_ids="vSol, clSolMore"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clSolMore"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toTopOf="@id/vSol"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/tvSolKolektorTyp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/typ_kolektoru"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/spSolKolektorTyp"
+                            app:layout_constraintEnd_toStartOf="@+id/spSolKolektorTyp"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/spSolKolektorTyp" />
+
+                        <Spinner
+                            android:id="@+id/spSolKolektorTyp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvSolKolektorPocet"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/pocet_kolektoru"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/etSolKolektorPocet"
+                            app:layout_constraintEnd_toStartOf="@+id/etSolKolektorPocet"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/etSolKolektorPocet" />
+
+                        <EditText
+                            android:id="@+id/etSolKolektorPocet"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:importantForAutofill="no"
+                            android:inputType="number"
+                            android:minWidth="60dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/spSolKolektorTyp"
+                            tools:ignore="LabelFor" />
+
+                        <TextView
+                            android:id="@+id/tvSolPotrubiTyp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/typ_potrubi"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/spSolPotrubiTyp"
+                            app:layout_constraintEnd_toStartOf="@+id/spSolPotrubiTyp"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/spSolPotrubiTyp" />
+
+                        <Spinner
+                            android:id="@+id/spSolPotrubiTyp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/etSolPotrubiStrechaDelka" />
+
+                        <TextView
+                            android:id="@+id/tvSolPotrubiDelka"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/delka_potrubi"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/etSolPotrubiDelka"
+                            app:layout_constraintEnd_toStartOf="@+id/etSolPotrubiDelka"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/etSolPotrubiDelka" />
+
+                        <EditText
+                            android:id="@+id/etSolPotrubiDelka"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:importantForAutofill="no"
+                            android:inputType="numberDecimal"
+                            android:minWidth="60dp"
+                            app:layout_constraintEnd_toStartOf="@+id/tvSolPotrubiDelkaJednotky"
+                            app:layout_constraintTop_toBottomOf="@+id/spSolPotrubiTyp"
+                            tools:ignore="LabelFor" />
+
+                        <TextView
+                            android:id="@+id/tvSolPotrubiDelkaJednotky"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:text="@string/m"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/etSolPotrubiDelka"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/etSolPotrubiDelka" />
+
+                        <TextView
+                            android:id="@+id/tvSolPotrubiStrechaTyp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/typ_potrubi_strecha"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/spSolPotrubiStrechaTyp"
+                            app:layout_constraintEnd_toStartOf="@+id/spSolPotrubiStrechaTyp"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/spSolPotrubiStrechaTyp" />
+
+                        <Spinner
+                            android:id="@+id/spSolPotrubiStrechaTyp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/etSolKolektorPocet" />
+
+                        <TextView
+                            android:id="@+id/tvSolPotrubiStrechaDelka"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/delka_potrubi"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/etSolPotrubiStrechaDelka"
+                            app:layout_constraintEnd_toStartOf="@+id/etSolPotrubiStrechaDelka"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/etSolPotrubiStrechaDelka" />
+
+                        <EditText
+                            android:id="@+id/etSolPotrubiStrechaDelka"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:importantForAutofill="no"
+                            android:inputType="numberDecimal"
+                            android:minWidth="60dp"
+                            app:layout_constraintEnd_toStartOf="@+id/tvSolPotrubiStrechaDelkaJednotky"
+                            app:layout_constraintTop_toBottomOf="@+id/spSolPotrubiStrechaTyp"
+                            tools:ignore="LabelFor" />
+
+                        <TextView
+                            android:id="@+id/tvSolPotrubiStrechaDelkaJednotky"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:text="@string/m"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/etSolPotrubiStrechaDelka"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/etSolPotrubiStrechaDelka" />
+
+                        <TextView
+                            android:id="@+id/tvSolVymenikObjem"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/objem_kapaliny_vymenik"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/etSolVymenikObjem"
+                            app:layout_constraintEnd_toStartOf="@+id/etSolVymenikObjem"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/etSolVymenikObjem" />
+
+                        <EditText
+                            android:id="@+id/etSolVymenikObjem"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:importantForAutofill="no"
+                            android:inputType="numberDecimal"
+                            android:minWidth="60dp"
+                            app:layout_constraintEnd_toStartOf="@+id/tvSolVymenikObjemJednotky"
+                            app:layout_constraintTop_toBottomOf="@+id/etSolPotrubiDelka"
+                            tools:ignore="LabelFor" />
+
+                        <TextView
+                            android:id="@+id/tvSolVymenikObjemJednotky"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:text="@string/litr"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/etSolVymenikObjem"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/etSolVymenikObjem" />
+
+                        <TextView
+                            android:id="@+id/tvSolH"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/vyskovy_rozdil"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/etSolH"
+                            app:layout_constraintEnd_toStartOf="@+id/etSolH"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/etSolH" />
+
+                        <EditText
+                            android:id="@+id/etSolH"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:importantForAutofill="no"
+                            android:inputType="numberDecimal"
+                            android:minWidth="60dp"
+                            app:layout_constraintEnd_toStartOf="@+id/tvSolHJednotky"
+                            app:layout_constraintTop_toBottomOf="@+id/etSolVymenikObjem"
+                            tools:ignore="LabelFor" />
+
+                        <TextView
+                            android:id="@+id/tvSolHJednotky"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:text="@string/m"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/etSolH"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/etSolH" />
+
+                        <TextView
+                            android:id="@+id/tvSolDoporucenaNadrz"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/doporucena_en"
+                            android:textColor="@color/ruzova"
+                            android:textSize="20sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/etSolH" />
+
+                        <TextView
+                            android:id="@+id/tvSolKodText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/kod"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/tvSolKod"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tvSolKod" />
+
+                        <TextView
+                            android:id="@+id/tvSolKod"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:text="00000"
+                            android:textSize="18sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/tvSolKodText"
+                            app:layout_constraintTop_toBottomOf="@+id/tvSolDoporucenaNadrz" />
+
+                        <TextView
+                            android:id="@+id/tvSolZkratkaText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/zkratka"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/tvSolZkratka"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tvSolZkratka" />
+
+                        <TextView
+                            android:id="@+id/tvSolZkratka"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:text="EXP QWERTZUIOP"
+                            android:textSize="18sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/tvSolKodText"
+                            app:layout_constraintTop_toBottomOf="@+id/tvSolKod" />
+
+                        <TextView
+                            android:id="@+id/tvSolNazevText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/nazev"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/tvSolNazev"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tvSolNazev" />
+
+                        <TextView
+                            android:id="@+id/tvSolNazev"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:text="Expanzní nádoba abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz"
+                            android:textSize="18sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/tvSolKodText"
+                            app:layout_constraintTop_toBottomOf="@+id/tvSolZkratka" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/vSol"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvTop"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cvSol">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tvTop"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:text="@string/en_top"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@id/barTop"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.Barrier
+                        android:id="@+id/barTop"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:barrierDirection="top"
+                        app:constraint_referenced_ids="vTop, clTopMore"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clTopMore"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toTopOf="@id/vTop"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:visibility="visible">
+
+                        <TextView
+                            android:id="@+id/tvTopObjem"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/top_objem"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/etTopObjem"
+                            app:layout_constraintEnd_toStartOf="@+id/etTopObjem"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/etTopObjem" />
+
+                        <EditText
+                            android:id="@+id/etTopObjem"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:importantForAutofill="no"
+                            android:inputType="numberDecimal"
+                            android:minWidth="60dp"
+                            app:layout_constraintEnd_toStartOf="@+id/tvTopObjemJednotky"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="LabelFor" />
+
+                        <TextView
+                            android:id="@+id/tvTopObjemJednotky"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:text="@string/litr"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/etTopObjem"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/etTopObjem" />
+
+                        <TextView
+                            android:id="@+id/tvTopTeplota"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/top_max_teplota"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/etTopTeplota"
+                            app:layout_constraintEnd_toStartOf="@+id/etTopTeplota"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintHorizontal_chainStyle="packed"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/etTopTeplota" />
+
+                        <EditText
+                            android:id="@+id/etTopTeplota"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:importantForAutofill="no"
+                            android:inputType="numberDecimal"
+                            android:minWidth="60dp"
+                            app:layout_constraintEnd_toStartOf="@+id/tvTopTeplotaJednotky"
+                            app:layout_constraintTop_toBottomOf="@id/etTopObjem"
+                            tools:ignore="LabelFor" />
+
+                        <TextView
+                            android:id="@+id/tvTopTeplotaJednotky"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:text="@string/stupen_celsia"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/etTopTeplota"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/etTopTeplota" />
+
+                        <TextView
+                            android:id="@+id/tvTopTlak"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/top_max_tlak"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/etTopTlak"
+                            app:layout_constraintEnd_toStartOf="@+id/etTopTlak"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/etTopTlak" />
+
+                        <EditText
+                            android:id="@+id/etTopTlak"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:importantForAutofill="no"
+                            android:inputType="numberDecimal"
+                            android:minWidth="60dp"
+                            android:text="2.5"
+                            app:layout_constraintEnd_toStartOf="@+id/tvTopTlakJednotky"
+                            app:layout_constraintTop_toBottomOf="@id/etTopTeplota"
+                            tools:ignore="LabelFor" />
+
+                        <TextView
+                            android:id="@+id/tvTopTlakJednotky"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:text="@string/bar"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/etTopTlak"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/etTopTlak" />
+
+                        <TextView
+                            android:id="@+id/tvTopPrevyseni"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/top_prevyseni"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/etTopPrevyseni"
+                            app:layout_constraintEnd_toStartOf="@+id/etTopPrevyseni"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintHorizontal_chainStyle="spread_inside"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/etTopPrevyseni" />
+
+                        <EditText
+                            android:id="@+id/etTopPrevyseni"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:importantForAutofill="no"
+                            android:inputType="numberDecimal"
+                            android:minWidth="60dp"
+                            app:layout_constraintEnd_toStartOf="@+id/tvTopPrevyseniJednotky"
+                            app:layout_constraintTop_toBottomOf="@id/etTopTlak"
+                            app:layout_constraintWidth_min="60dp"
+                            tools:ignore="LabelFor" />
+
+                        <TextView
+                            android:id="@+id/tvTopPrevyseniJednotky"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:text="@string/m"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/etTopPrevyseni"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/etTopPrevyseni" />
+
+                        <TextView
+                            android:id="@+id/tvTopTlakKotel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:maxLines="2"
+                            android:text="@string/top_min_tlak_kotel"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/etTopTlakKotel"
+                            app:layout_constraintEnd_toStartOf="@+id/etTopTlakKotel"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/etTopTlakKotel" />
+
+                        <EditText
+                            android:id="@+id/etTopTlakKotel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:importantForAutofill="no"
+                            android:inputType="numberDecimal"
+                            android:minWidth="60dp"
+                            android:text="0.5"
+                            app:layout_constraintEnd_toStartOf="@+id/tvTopTlakKotelJednotky"
+                            app:layout_constraintTop_toBottomOf="@id/etTopPrevyseni"
+                            tools:ignore="LabelFor" />
+
+                        <TextView
+                            android:id="@+id/tvTopTlakKotelJednotky"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:text="@string/bar"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/etTopTlakKotel"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/etTopTlakKotel" />
+
+                        <TextView
+                            android:id="@+id/tvTopDoporucenaNadrz"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/doporucena_en"
+                            android:textColor="@color/ruzova"
+                            android:textSize="20sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/etTopTlakKotel" />
+
+                        <TextView
+                            android:id="@+id/tvTopKodText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/kod"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/tvTopKod"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tvTopKod" />
+
+                        <TextView
+                            android:id="@+id/tvTopKod"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:text="00000"
+                            android:textSize="18sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/tvTopKodText"
+                            app:layout_constraintTop_toBottomOf="@+id/tvTopDoporucenaNadrz" />
+
+                        <TextView
+                            android:id="@+id/tvTopZkratkaText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/zkratka"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/tvTopZkratka"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tvTopZkratka" />
+
+                        <TextView
+                            android:id="@+id/tvTopZkratka"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:text="EXP QWERTZUIOP"
+                            android:textSize="18sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/tvTopKodText"
+                            app:layout_constraintTop_toBottomOf="@+id/tvTopKod" />
+
+                        <TextView
+                            android:id="@+id/tvTopNazevText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/nazev"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/tvTopNazev"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tvTopNazev" />
+
+                        <TextView
+                            android:id="@+id/tvTopNazev"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:text="Expanzní nádoba abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz"
+                            android:textSize="18sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/tvTopKodText"
+                            app:layout_constraintTop_toBottomOf="@+id/tvTopZkratka" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/vTop"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
